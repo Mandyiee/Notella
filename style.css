@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400&display=swap');
 :root {
-  --themeColor: #333;
+  --themeColor: #111;
 }
 * {
   margin: 0;
@@ -11,7 +11,8 @@
   box-sizing: border-box;
   font-family: 'Catamaran', sans-serif;
 }
-.pin {
+ 
+.pins {
   position: fixed;
   height: 100vh;
   width: 100vw;
@@ -19,10 +20,9 @@
 }
 .pinBody {
   width: 100%;
-  height: 95vh;
+  height: 100%;
   min-height: calc(100vh - 6px);
   position: relative;
- 
 }
 
 .number, .number2 {
@@ -171,6 +171,7 @@ border-radius: 10px;
   transition: .7s ease;
   border-radius: 5px;
 }
+
 .menu1, .menu2 {
   width: 150px;
   height: 190px;
@@ -256,30 +257,21 @@ border-radius: 10px;
 .imgBody  {
   display: none;;
 }
+
 @media screen and (min-width: 850px) {
-  .pinBody {
-  width: 700px;
-  height:  calc(60vh - 5px);
-  top: 250px;
-  margin: 0 auto;
+  
+  
+.pinBody {
+  width: min(70vw,700px);
+  height:  60vh;
+  top: 50%;
   position: absolute;
-  min-height: calc(50vh - 6px);
-  left: calc(50vw - 250px);
- 
+  min-height: calc(60vh - 6px);
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
 body {
   position: relative;
-}
-.imgBody {
-  display: block;
-  
-}
-.image {
-  width: 950px;
-  height: 700px;
-  position: absolute;
-  right: -51%;
-  top : -90px;
 }
 .down {
   clip-path: inset(0% 0% 96% 0%)

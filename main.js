@@ -7,6 +7,7 @@ let cancel = document.querySelector('.noteTab1');
 let openNote = document.querySelector('.openUp');
 let note = document.querySelector('.note')
 openNote.addEventListener('click', function() {
+  notes.value = ""
   note.classList.toggle('noteUp')
 
 })
@@ -27,7 +28,7 @@ for (var i = 0; i < 10000 ;i++) {
       let newNoteCon = document.createElement('div')
       newNoteCon.classList.add('demoCon')
    newNoteCon.innerHTML = localStorage.getItem('note' + [i])
-      show.appendChild(newNoteCon);
+      show.prepend(newNoteCon);
       
 
     }
@@ -69,7 +70,7 @@ let newNoteCon = document.createElement('div')
   newNoteCon.classList.add('demoCon');
   newNoteCon.innerHTML = `<div class = 'demo'> ${notes.value} </div> <button class = 'del' id = ${ids} > <i class='fas fa-trash'> </i> </button>`;
   
-show.appendChild(newNoteCon);
+show.prepend(newNoteCon);
 localStorage.setItem('note' + ids, newNoteCon.innerHTML)
 
   ids++;
